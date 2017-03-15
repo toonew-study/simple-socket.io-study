@@ -26,7 +26,7 @@ $(function () {
   });
 
   socket.on('join user', function (data) {
-    console.error(`新的加入者${data}`);
+    $messageList.append(`<p style="width:100%;text-align: center;">新的加入者${data}</p>`);
   });
 
   $window.keydown(function (event) {
