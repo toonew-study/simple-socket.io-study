@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *, body {
+            padding: 0;
+            margin: 0;
+        }
+        #login-div{
+            position:absolute;
+            width:100%;
+            height:100%;
+            background: #000;
+            z-index:123;
+        }
+        #messageList p{
+            border:1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div id="login-div">
+    <div style="position:absolute;top:20%;left:35%;color:#fff;">
+        <h1>your name</h1>
+        <input type="text" id="login">
+    </div>
+
+</div>
+
+<div id="messageList">
+
+</div>
+
+<div style="position:fixed;bottom:0;width:100%">
+    <input type="text" style="width:100%;" id="message">
+</div>
+
+<script src="/public/jquery-1.11.1.min.js"></script>
+<script src="/public/socket.io.js"></script>
+<script src="/public/main2.js"></script>
+</body>
+</html>
