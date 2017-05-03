@@ -1,20 +1,22 @@
 /**
+ * 单文件测试
+ * 静态文件地址为/public/test/index.html
  * Created by Rain on 2016/12/30.
  */
 const path = require('path');
+const http = require('http');
 
 const express = require('express');
-const app = express();
 
-const server = require('http').createServer(app);
+const app = express();
+app.use('/public', express.static(path.join(__dirname + '/public')));
+const server = http.createServer(app);
 
 const port = process.env.PORT || 3002;
 
 server.listen(port);
 
 const io = require('socket.io')(server);
-
-app.use('/public', express.static(path.join(__dirname + '/public')));
 
 let numUsers = 0;
 
